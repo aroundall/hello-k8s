@@ -1,18 +1,19 @@
 docker network create -d bridge the-net
 docker run --name wp-db \
     --network the-net \
+    --restart always \
     -v /var/lib/mysql \
     -e MYSQL_ROOT_PASSWORD=wordpress \
     -e MYSQL_DATABASE=wordpress \
     -e MYSQL_DATABASE=wp \
-    --rm -d mysql:5.7
+    -d mysql:5.7
 
 docker run -it --network the-net --rm mysql:5.7 mysql \
      -hwp-db -uroot -p
 
 docker run --name wordpress \
     --network the-net \
-    --rm \
+    --restart always \
     -e WORDPRESS_DB_HOST=wp-db \
     -e WORDPRESS_DB_USER=root \
     -e WORDPRESS_DB_PASSWORD=wordpress \

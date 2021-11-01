@@ -6,17 +6,19 @@ Vagrant.configure("2") do |config|
     v.cpus = 2
   end
   config.vm.define "cka-cls-01" do |server|
-    server.vm.network "private_network", ip: "172.28.128.3", auto_config:false
+    server.vm.hostname="cka01"
+    server.vm.network "private_network", ip: "172.28.128.11"
   end
   config.vm.define "cka-cls-02" do |server|
-    server.vm.hostname = "cka-cls-02"
-    server.vm.network "private_network", ip: "172.28.128.4", auto_config:false
+    server.vm.hostname="cka02"
+    server.vm.network "private_network", ip: "172.28.128.12"
   end
   config.vm.define "cka-cls-03" do |server|
-    server.vm.hostname = "cka-cls-03"
-    server.vm.network "private_network", ip: "172.28.128.5", auto_config:false
+    server.vm.hostname="cka03"
+    server.vm.network "private_network", ip: "172.28.128.13"
   end
-  config.vm.define "hello-iptables" do |server|
-    server.vm.network "private_network", ip: "172.28.128.100", auto_config:false
+  config.vm.define "cka-cls-04" do |server|
+    server.vm.hostname="cka04"
+    server.vm.network "private_network", ip: "172.28.128.14"
   end
 end
