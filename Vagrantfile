@@ -17,8 +17,12 @@ Vagrant.configure("2") do |config|
     server.vm.hostname="cka03"
     server.vm.network "private_network", ip: "172.28.128.13"
   end
-  config.vm.define "cka-cls-04" do |server|
-    server.vm.hostname="cka04"
-    server.vm.network "private_network", ip: "172.28.128.14"
-  end
+  # config.vm.define "cka-cls-04" do |server|
+  #   server.vm.hostname="cka04"
+  #   server.vm.network "private_network", ip: "172.28.128.14"
+  # end
+  # config.vm.define "cka-prov" do |server|
+  #   server.vm.hostname="cka-prov"
+  #   server.vm.network "private_network", ip: "172.28.128.100"
+  # end
 end
