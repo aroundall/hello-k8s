@@ -4,7 +4,6 @@ docker run --name wp-db \
     --restart always \
     -v /var/lib/mysql \
     -e MYSQL_ROOT_PASSWORD=wordpress \
-    -e MYSQL_DATABASE=wordpress \
     -e MYSQL_DATABASE=wp \
     -d mysql:5.7
 
